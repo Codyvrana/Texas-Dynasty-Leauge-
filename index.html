@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Texas Dynasty League</title>
+<style>
+:root{--bg:#07090d;--card:#11151c;--card2:#171c25;--text:#f4f6f8;--muted:#9ca6b5;--accent:#e31b23;--gold:#f5c451;--line:#29303b}
+*{box-sizing:border-box} body{margin:0;background:linear-gradient(135deg,#07090d,#10141b);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+header{padding:22px 18px 14px;position:sticky;top:0;background:rgba(7,9,13,.94);backdrop-filter:blur(10px);z-index:5;border-bottom:1px solid var(--line)}
+.wrap{max-width:1100px;margin:auto}.brand{display:flex;align-items:center;gap:14px}.logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7d1016);display:grid;place-items:center;font-size:25px;font-weight:900;box-shadow:0 8px 25px #0008}.brand h1{font-size:24px;margin:0}.brand p{margin:3px 0 0;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:1.5px}
+nav{display:flex;gap:8px;overflow:auto;padding-top:16px}nav button{border:1px solid var(--line);background:var(--card);color:var(--muted);padding:10px 14px;border-radius:999px;white-space:nowrap;cursor:pointer}nav button.active,nav button:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+main{padding:28px 18px 60px}.hero{padding:28px;border:1px solid var(--line);border-radius:22px;background:radial-gradient(circle at 90% 10%,#7d101633,transparent 40%),var(--card);margin-bottom:22px}.eyebrow{color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:2px;font-size:12px}.hero h2{font-size:clamp(32px,7vw,62px);margin:8px 0}.hero p{color:var(--muted);max-width:700px;line-height:1.6}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.stat{background:var(--card);border:1px solid var(--line);padding:18px;border-radius:16px}.stat b{font-size:28px}.stat span{display:block;color:var(--muted);font-size:12px;margin-top:5px;text-transform:uppercase}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;margin-top:18px}.panel h3{margin:0 0 14px}.table{width:100%;border-collapse:collapse}.table th,.table td{padding:12px 9px;border-bottom:1px solid var(--line);text-align:left}.table th{color:var(--muted);font-size:11px;text-transform:uppercase}.rank{font-weight:900;width:38px}.team{font-weight:800}.pill{display:inline-block;padding:5px 9px;border-radius:999px;background:var(--card2);color:var(--muted);font-size:11px}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.teamcard{background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:18px}.teamtop{display:flex;justify-content:space-between;gap:10px}.teamcard h4{margin:0;font-size:18px}.teamcard p{color:var(--muted);font-size:13px;line-height:1.5}.section{display:none}.section.active{display:block}.schedule{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.week{border:1px solid var(--line);background:var(--card2);padding:14px;border-radius:14px}.week b{color:var(--gold)}footer{text-align:center;color:var(--muted);padding:30px;font-size:12px}
+@media(max-width:700px){.grid{grid-template-columns:repeat(2,1fr)}.cards,.schedule{grid-template-columns:1fr}.table{font-size:13px}.hide-mobile{display:none}.hero{padding:22px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="brand"><div class="logo">TX</div><div><h1>Texas Dynasty League</h1><p>2026 Season • 10 Teams • 14 Weeks</p></div></div>
+  <nav>
+    <button class="active" data-tab="home">Home</button><button data-tab="standings">Standings</button><button data-tab="power">Power Rankings</button><button data-tab="teams">Teams</button><button data-tab="schedule">Schedule</button><button data-tab="history">League History</button>
+  </nav>
+</div></header>
+
+<main class="wrap">
+<section id="home" class="section active">
+  <div class="hero"><div class="eyebrow">Welcome to the league</div><h2>Texas Dynasty League</h2><p>Where the trash talk is serious, the rivalries are personal, and every Sunday matters. Follow the 2026 season, standings, power rankings, schedules and league history all in one place.</p></div>
+  <div class="grid">
+    <div class="stat"><b>10</b><span>Teams</span></div><div class="stat"><b>14</b><span>Regular Season Weeks</span></div><div class="stat"><b>6</b><span>Playoff Teams</span></div><div class="stat"><b>5</b><span>Divisions</span></div>
+  </div>
+  <div class="panel"><h3>🔥 2026 Preseason Top 5</h3><table class="table"><tbody id="top5"></tbody></table></div>
+  <div class="panel"><h3>🏆 League Format</h3><p style="color:var(--muted);line-height:1.7">Five divisions with two teams each. All five division winners make the playoffs, plus one wild card. The regular season runs 14 weeks before the playoff race begins.</p></div>
+</section>
+
+<section id="standings" class="section"><div class="hero"><div class="eyebrow">2026 Season</div><h2>Standings</h2><p>Everybody starts 0–0. Update records here as the season progresses.</p></div><div class="panel"><table class="table"><thead><tr><th>#</th><th>Team</th><th>W</th><th>L</th><th>PF</th><th>PA</th></tr></thead><tbody id="standingsBody"></tbody></table></div></section>
+
+<section id="power" class="section"><div class="hero"><div class="eyebrow">Preseason</div><h2>Power Rankings</h2><p>The official 2026 preseason ranking of all ten teams.</p></div><div class="panel"><table class="table"><thead><tr><th>#</th><th>Team</th><th>Outlook</th></tr></thead><tbody id="powerBody"></tbody></table></div></section>
+
+<section id="teams" class="section"><div class="hero"><div class="eyebrow">The Franchises</div><h2>All 10 Teams</h2><p>Every team has a story. Every owner has something to prove.</p></div><div class="cards" id="teamCards"></div></section>
+
+<section id="schedule" class="section"><div class="hero"><div class="eyebrow">2026</div><h2>Schedule</h2><p>14 weeks of dynasty football. Divisional matchups are marked with ★.</p></div><div class="schedule" id="scheduleGrid"></div></section>
+
+<section id="history" class="section"><div class="hero"><div class="eyebrow">The Record Book</div><h2>League History</h2><p>Past seasons, champions and the teams that made their mark.</p></div><div class="panel"><h3>🏆 2025 Champion</h3><p style="font-size:22px;font-weight:900">Ratboy1110</p><p style="color:var(--muted)">Last year's final ranking started with Brandon/Ratboy1110 in first place, followed by Mike, James, Eddie, Mikey, Hunter, x, Cody, Bobo and Stephen.</p></div></section>
+</main>
+<footer>Texas Dynasty League • 2026 • Built for the league</footer>
+
+<script>
+const teams=["Ratboy1110","DirtyMikeAndTheBoys","Grupo Manteca","2 Girls 1 Kupp","CheekDrilla361","Hunter Games","ShwM3yourTDs","Silver Bullets","Houston Takuachez","WatcoTortaSlayer"];
+const themes={
+"Ratboy1110":"2025 Champion • Defending the crown",
+"DirtyMikeAndTheBoys":"West Texas • Oil & football",
+"Grupo Manteca":"Fiesta • Día de los Muertos",
+"2 Girls 1 Kupp":"Cooper Kupp-inspired rivalry energy",
+"CheekDrilla361":"Built for chaos and big plays",
+"Hunter Games":"The hunt for the championship",
+"ShwM3yourTDs":"Touchdown-first mentality",
+"Silver Bullets":"Colorado mountains • Silver Bullets",
+"Houston Takuachez":"Houston • Takuache culture",
+"WatcoTortaSlayer":"Texas • Torta-fueled dominance"
+};
+const rankings=teams;
+document.getElementById("top5").innerHTML=rankings.slice(0,5).map((t,i)=>`<tr><td class="rank">${i+1}</td><td class="team">${t}</td><td><span class="pill">Preseason</span></td></tr>`).join("");
+document.getElementById("standingsBody").innerHTML=teams.map((t,i)=>`<tr><td class="rank">${i+1}</td><td class="team">${t}</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>`).join("");
+document.getElementById("powerBody").innerHTML=teams.map((t,i)=>`<tr><td class="rank">${i+1}</td><td class="team">${t}</td><td style="color:var(--muted)">${i===0?"Defending champion":i<3?"Contender":"Chasing the pack"}</td></tr>`).join("");
+document.getElementById("teamCards").innerHTML=teams.map((t,i)=>`<div class="teamcard"><div class="teamtop"><h4>${t}</h4><span class="pill">#${i+1}</span></div><p>${themes[t]}</p><span class="pill">2026: 0–0</span></div>`).join("");
+document.getElementById("scheduleGrid").innerHTML=Array.from({length:14},(_,i)=>`<div class="week"><b>Week ${i+1}</b><p style="color:var(--muted);margin-bottom:0">${i<3?"Schedule coming soon • add matchups here.":"Matchups • results • weekly recap"}</p></div>`).join("");
+document.querySelectorAll("nav button").forEach(btn=>btn.addEventListener("click",()=>{document.querySelectorAll("nav button").forEach(b=>b.classList.remove("active"));document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));btn.classList.add("active");document.getElementById(btn.dataset.tab).classList.add("active");window.scrollTo({top:0,behavior:"smooth"});}));
+</script>
+</body>
+</html>
