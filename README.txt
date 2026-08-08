@@ -6,3 +6,5 @@ League Records:
 - Most All-Time Wins: 13 — DirtyMikeAndTheBoys
 - Most Championships: 1 — Ratboy1110 (2025)
 Awards now include Rivalry of the Year and Game of the Year.
+
+- Added Week 1 Outlook tab with all five Week 1 divisional matchups, projections, win probabilities, outlooks, expert picks, Game of the Week, Team to Watch, and Upset Alert.
