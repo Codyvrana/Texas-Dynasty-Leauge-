@@ -40,11 +40,78 @@ a{color:inherit;text-decoration:none}
 .award{border-left:4px solid var(--gold)}
 footer{margin-top:45px;padding:22px 0;color:#7789b0;border-top:1px solid #1b2b4d;text-align:center}
 @media(max-width:650px){.nav a{flex:1 1 42%;font-size:14px}.hero h1{font-size:42px}.feature{padding:28px 22px}.feature p{font-size:17px}.game{grid-template-columns:1fr 35px 1fr;font-size:14px}.card{padding:18px}}
+
+.champ-banner{
+  position:absolute;
+  top:8px;
+  left:10px;
+  width:92px;
+  min-height:108px;
+  z-index:20;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:18px 7px 14px;
+  text-align:center;
+  color:#fff4c4;
+  background:linear-gradient(180deg,#1a2545 0%,#101a35 78%);
+  border:2px solid #d5b34a;
+  border-top:4px solid #f6d45d;
+  box-shadow:0 8px 18px rgba(0,0,0,.35);
+  clip-path:polygon(0 0,100% 0,100% 90%,50% 100%,0 90%);
+}
+.champ-banner:before{
+  content:"";
+  position:absolute;
+  top:-9px;
+  left:50%;
+  width:12px;
+  height:12px;
+  transform:translateX(-50%);
+  border:2px solid #d5b34a;
+  border-radius:50%;
+  background:#0b1430;
+}
+.champ-banner .banner-year{
+  font-size:11px;
+  font-weight:950;
+  letter-spacing:1px;
+  color:#f6d45d;
+  line-height:1.1;
+}
+.champ-banner .banner-title{
+  margin-top:6px;
+  font-size:10px;
+  font-weight:950;
+  line-height:1.15;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+.champ-banner .banner-name{
+  margin-top:7px;
+  font-size:11px;
+  font-weight:950;
+  line-height:1.1;
+  color:#fff;
+  overflow-wrap:anywhere;
+}
+.wrap{position:relative}
+@media(max-width:650px){
+  .champ-banner{width:76px;min-height:92px;left:7px;top:7px;padding:15px 5px 11px}
+  .champ-banner .banner-year{font-size:9px}
+  .champ-banner .banner-title{font-size:8px}
+  .champ-banner .banner-name{font-size:9px}
+}
+
 </style></head>
-<body><div class="topline"></div><div class="wrap">
+<body><div class="topline"></div><div class="wrap"><div class="champ-banner" aria-label="2025 Champion Ratboy1110">
+<div class="banner-year">2025</div>
+<div class="banner-title">CHAMPION</div>
+<div class="banner-name">RATBOY1110</div>
+</div>
 <header class="hero"><div class="logo-box"><img class="logo" src="texas_dynasty_logo.png" alt="Texas Dynasty League logo"></div>
-<div class="kicker">Dynasty Football • 2026 Season</div><h1>Texas Dynasty League</h1>
-<div class="champ">🏆 2025 Champion Ratboy1110</div></header>
+<div class="kicker">Dynasty Football • 2026 Season</div><h1>Texas Dynasty League</h1></header>
 <div class="nav-shell"><div class="nav"><a class="active" href="index.html">Home</a><a class="" href="news.html">News</a><a class="" href="divisions.html">Divisions</a><a class="" href="power-rankings.html">Power Rankings</a><a class="" href="top-players.html">Top Players</a><a class="" href="schedule.html">Schedule</a><a class="" href="league-history.html">League History</a><a class="" href="awards.html">Awards</a><a class="" href="league-records.html">League Records</a><a class="" href="interviews.html">Interviews</a></div></div><div class="gradient-line"></div>
 <section class="feature">
 <div class="kicker">TEXAS DYNASTY LEAGUE • 2026 SEASON</div>

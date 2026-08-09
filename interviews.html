@@ -40,11 +40,78 @@ a{color:inherit;text-decoration:none}
 .award{border-left:4px solid var(--gold)}
 footer{margin-top:45px;padding:22px 0;color:#7789b0;border-top:1px solid #1b2b4d;text-align:center}
 @media(max-width:650px){.nav a{flex:1 1 42%;font-size:14px}.hero h1{font-size:42px}.feature{padding:28px 22px}.feature p{font-size:17px}.game{grid-template-columns:1fr 35px 1fr;font-size:14px}.card{padding:18px}}
+
+.champ-banner{
+  position:absolute;
+  top:8px;
+  left:10px;
+  width:92px;
+  min-height:108px;
+  z-index:20;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:18px 7px 14px;
+  text-align:center;
+  color:#fff4c4;
+  background:linear-gradient(180deg,#1a2545 0%,#101a35 78%);
+  border:2px solid #d5b34a;
+  border-top:4px solid #f6d45d;
+  box-shadow:0 8px 18px rgba(0,0,0,.35);
+  clip-path:polygon(0 0,100% 0,100% 90%,50% 100%,0 90%);
+}
+.champ-banner:before{
+  content:"";
+  position:absolute;
+  top:-9px;
+  left:50%;
+  width:12px;
+  height:12px;
+  transform:translateX(-50%);
+  border:2px solid #d5b34a;
+  border-radius:50%;
+  background:#0b1430;
+}
+.champ-banner .banner-year{
+  font-size:11px;
+  font-weight:950;
+  letter-spacing:1px;
+  color:#f6d45d;
+  line-height:1.1;
+}
+.champ-banner .banner-title{
+  margin-top:6px;
+  font-size:10px;
+  font-weight:950;
+  line-height:1.15;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+.champ-banner .banner-name{
+  margin-top:7px;
+  font-size:11px;
+  font-weight:950;
+  line-height:1.1;
+  color:#fff;
+  overflow-wrap:anywhere;
+}
+.wrap{position:relative}
+@media(max-width:650px){
+  .champ-banner{width:76px;min-height:92px;left:7px;top:7px;padding:15px 5px 11px}
+  .champ-banner .banner-year{font-size:9px}
+  .champ-banner .banner-title{font-size:8px}
+  .champ-banner .banner-name{font-size:9px}
+}
+
 </style></head>
-<body><div class="topline"></div><div class="wrap">
+<body><div class="topline"></div><div class="wrap"><div class="champ-banner" aria-label="2025 Champion Ratboy1110">
+<div class="banner-year">2025</div>
+<div class="banner-title">CHAMPION</div>
+<div class="banner-name">RATBOY1110</div>
+</div>
 <header class="hero"><div class="logo-box"><img class="logo" src="texas_dynasty_logo.png" alt="Texas Dynasty League logo"></div>
-<div class="kicker">Dynasty Football • 2026 Season</div><h1>Texas Dynasty League</h1>
-<div class="champ">🏆 2025 Champion Ratboy1110</div></header>
+<div class="kicker">Dynasty Football • 2026 Season</div><h1>Texas Dynasty League</h1></header>
 <div class="nav-shell"><div class="nav"><a class="active" href="index.html">Home</a><a class="" href="news.html">News</a><a class="" href="divisions.html">Divisions</a><a class="" href="power-rankings.html">Power Rankings</a><a class="" href="top-players.html">Top Players</a><a class="" href="schedule.html">Schedule</a><a class="" href="league-history.html">League History</a><a class="" href="awards.html">Awards</a><a class="" href="league-records.html">League Records</a><a class="" href="interviews.html">Interviews</a></div></div><div class="gradient-line"></div>
 <h2 class="page-title">🎙️ Manager Interviews</h2>
 <p class="sub">Inside the minds of the Texas Dynasty League managers.</p>
@@ -59,8 +126,24 @@ footer{margin-top:45px;padding:22px 0;color:#7789b0;border-top:1px solid #1b2b4d
 <p class="quote">“I don’t think there is any doubt about my team. These fuckers hate when they gotta play me.”</p>
 <p class="muted"><strong>— James Hrabovsky, Manager of 2 Girls 1 Kupp</strong></p>
 </div>
-<div class="grid">
-<div class="card"><h3>🎤 First Interview</h3><p class="muted">Manager: TBD<br>Team: TBD</p><p>Questions and quotes will appear here.</p></div>
-<div class="card"><h3>🔥 Rivalry Spotlight</h3><p class="muted">Two managers. One matchup.</p><p>Interview coming soon.</p></div>
-</div>
+
+<div class="feature"><div class="kicker">MANAGER INTERVIEW • SHOWM3YOURTDS</div><h2>🎙️ XAVIER SALAZAR: SHOWM3YOURTDS IS READY TO BOUNCE BACK</h2>
+<p><strong>Q: Despite only winning 5 games last year you finished 3rd in most points scored. Do you believe you’ll have a bounce back season?</strong></p><p class="quote">“This season I had planned to tank our team, but after this offseason after looking at our roster, we’ll be able to bounce back, answer is the same.”</p>
+<p><strong>Q: Your division rival went to the semifinals last season. What do you have to say to Edman for this upcoming season?</strong></p><p class="quote">“Edman gunna get it week 1,”</p>
+<p class="muted"><strong>— XAVIER SALAZAR, Manager of ShowM3yourTDs</strong></p></div>
+<div class="feature"><div class="kicker">MANAGER INTERVIEW • HUNTER GAMES</div><h2>🎙️ HUNTER GARZA: “WE’RE COMING ON A MISSION THIS YEAR”</h2>
+<p><strong>Q: You lost in the first round of the playoffs last season. What gets you to that next step this season?</strong></p><p class="quote">“I love our offense a lot really, I’m excited to see what those guys have this season. I got some studs at QB, RB, and WR. I like to think we have one of the best offenses in the league”</p>
+<p><strong>Q: Who on your roster do you think makes the biggest impact?</strong></p><p class="quote">“We’re a well rounded team. Last year our best guy was De’von Achane showed out for us every game put up a lot of numbers and lead our team in points per week almost every week. I’m super excited to see what he does this year.”</p>
+<p><strong>Q: You’re in the closest division this season. What do you have to say to your rival CheekDrilla361?</strong></p><p class="quote">“New division same opponent. We know what we have, we know what we are, we’re coming to win not make friends in this league it doesn’t matter if he’s first or last place in the league. We’re coming on a mission this year.”</p>
+<p class="muted"><strong>— HUNTER GARZA, Manager of Hunter Games</strong></p></div>
+<div class="feature"><div class="kicker">MANAGER INTERVIEW • GRUPO MANTECA</div><h2>🎙️ EDDIE MARTINEZ: “I’LL BE A THREAT TO ANY TEAM GETTING IN MY WAY”</h2>
+<p><strong>Q: You finished the 2025 regular season 7-7 and made it to the semifinals even though scoring 175.64 points in that game you came up short. Who on your team gets you over the hill to get to the championship game?</strong></p><p class="quote">“I have to give credit to the RBs. Each of them produced when it counted each and every game during the season. They played as a solid committee team and there were some adjustments to add to the support this coming season.”</p>
+<p><strong>Q: Your division rival seems to be a little slept on even though finishing 5-9 last year he ranked 3rd in points scored last year. What do you have to say to Little X?</strong></p><p class="quote">“Tell your mom I’ll call her back after this interview is done.”</p>
+<p><strong>Q: You and James tied records last year at 7-7. Do you believe he is a threat to you if it comes down to a wild card spot?</strong></p><p class="quote">“When it comes down to the competition between myself and Hrabovsky out last season I see 2 solidified teams who measured to each others rule when it comes to this league. 2 well organized teams with potential to lead all the way to the finish line. So when asked if he’s a threat to me to a wildcard spot, I say no but I sure will a be threat to any team getting in my way to the chip this coming season.”</p>
+<p class="muted"><strong>— EDDIE MARTINEZ, Manager of Grupo Manteca</strong></p></div>
+<div class="feature"><div class="kicker">MANAGER INTERVIEW • DIRTYMIKEANDTHEBOYS</div><h2>🎙️ MIKE DE LOS SANTOS: “LEAVING NO DOUBT THAT I DESERVE TO HOLD THAT TROPHY”</h2>
+<p><strong>Q: You finished runner-up last season in the championship after being ranked #1 to finish the regular season. Do you hold a grudge against Ratboy1110?</strong></p><p class="quote">“I don’t hold a grudge against rattyboy but what can I say other than the better team on the field won that day. I won’t forget the pain I felt being so close and falling short definitely carrying it all in to this season and leaving no doubt that I deserve to hold that trophy”</p>
+<p><strong>Q: You traded for the first overall pick and took Jeremiyah Love. Do you think he’s the one that eventually gets you that championship ring?</strong></p><p class="quote">“One player doesn’t make a team but he will be a key player in this season coaching staff sees a lot of potential in this young athlete”</p>
+<p><strong>Q: Who do you think is the biggest threat to be in your way to the top?</strong></p><p class="quote">“Biggest threat has to be Grupo Manteca. Last season every game was close and came down to a few key plays and players”</p>
+<p class="muted"><strong>— MIKE DE LOS SANTOS, Manager of DirtyMikeAndTheBoys</strong></p></div>
 <footer>Texas Dynasty League • Est. 2025 • 2026 Season • LFG</footer></div></body></html>
